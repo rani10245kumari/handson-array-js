@@ -1,0 +1,23 @@
+body {
+    background-color: blanchedalmond;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(20, 1, 1);
+}
+
+pre {
+    font-size: 20px;
+    color: rgb(58, 7, 7);
+}
+
+p {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 20px;
+    color: blueviolet;
+}

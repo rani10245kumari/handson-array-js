@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array handson</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h3>Question</h3>
+    <pre>
+       let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] 
+</pre>
+    <h3>Question 1:</h3>
+    <h3>"We are interested in retrieving only the students' names; all the names should be in caps.<br>
+
+        ['JOHN', 'BABA', 'YAGA', 'WICK']"</h3>
+    <p>
+        let ans1=studentRecords.map((item)=>item.name.toUpperCase())<br>
+        console.log(ans1)
+    </p>
+    <h5>Output:- [ 'JOHN', 'BABA', 'YAGA', 'WICK' ]</h5>
+
+
+    <!--question no. 2-->
+    <h3>Question2:</h3>
+    <h3>"Suppose we have the same dataset as above but this time we want to get the details of students who scored more
+        than 50 marks.<br>
+
+        [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"</h3>
+    <p>
+        let ans2=studentRecords.filter((item)=>item.marks>50)<br>
+        console.log(ans2)
+    </p>
+    <h5>Output:- [
+        { name: 'John', id: 123, marks: 98 },<br>
+        { name: 'Wick', id: 115, marks: 75 }
+        ]
+    </h5>
+
+
+    <!--question no. 3-->
+    <h3>Question3:<br>
+        Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.
+    </h3>
+    <p>
+        let ans3=studentRecords.filter((item)=>item.marks>50 && item.id>120)<br>
+        console.log(ans3)
+    </p>
+    <h5>output:- [ { name: 'John', id: 123, marks: 98 } ]</h5>
+
+    <!--question no. 4-->
+    <h3>Question4: <br>
+        Consider the same scenario we have discussed above, but this time we would like to know the sum total of the
+        marks of the students.</h3>
+    <p>
+        let ans4=0<br>
+        studentRecords.filter((item)=>ans4+=item.marks)<br>
+        console.log(ans4)<br>
+    </p>
+    <h5>Output:- 241</h5>
+    <!--question no. 5------>
+
+    <h3>Question5:<br>
+        This time we want to get only the names of the students who scored more than 50 marks from the same dataset used
+        above.
+    </h3>
+    <p>
+        let ans5= ans2.map((item)=>item.name.toUpperCase())<br>
+        console.log(ans5)
+    </p>
+    <h5>Output:- [ 'JOHN', 'WICK' ]</h5>
+    <!-----question no. 6---- -->
+    <h3>This time we are required to print the sum of marks of the students with id > 120.</h3>
+    <p>let ans6=0<br>
+        studentRecords.filter((item)=>item.id>120).map((item)=>ans6+=item.marks)<br>
+        console.log(ans6)</p>
+    <h5>Output:- 143</h5>
+
+    <!----question no. 7------->
+    <h3>Question7: <br>
+        This time we are required to print the total marks of the students with marks greater than 50 after a grace of
+        15 marks has been added to those students who scored less than 50.
+    </h3>
+    <p>
+        let ans7=0<br>
+        let update=studentRecords.map((item)=>{<br>
+        if(item.marks<50)<br>
+            item.marks+=15<br>
+            return item<br>
+
+            }).map((item)=>item.marks>50? ans7+=item.marks:null)<br>
+            console.log(ans7)<br>
+    </p>
+    <h5>Output:- 233</h5>
+    <!----------question no. 8-->
+    <h3>Question8:<br>
+        Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of
+        objects. </h3>
+    <pre>
+        class Student {
+            constructor(name, className, rollNo) {
+              this.name = name;
+              this.className = className;
+              this.rollNo = rollNo;
+            }
+          }
+
+          const student1 = new Student("John Doe", "Class A", 101);
+          const student2 = new Student("Jane Smith", "Class B", 102);
+          const student3 = new Student("Bob Johnson", "Class A", 103);
+          const student4 = new Student("Alice Brown", "Class C", 104);
+          const student5 = new Student("Michael Lee", "Class B", 105);
+          const student6 = new Student("Emily Davis", "Class A", 106);
+
+          const studentArray = [student1, student2, student3, student4, student5, student6];
+          console.log(studentArray[0]);
+          console.log(studentArray); 
+    </pre>
+    <h5>Output: <br>
+        Student { name: 'John Doe', className: 'Class A', rollNo: 101 }<br>
+        [<br>
+        Student { name: 'John Doe', className: 'Class A', rollNo: 101 },<br>
+        Student { name: 'Jane Smith', className: 'Class B', rollNo: 102 },<br>
+        Student { name: 'Bob Johnson', className: 'Class A', rollNo: 103 },<br>
+        Student { name: 'Alice Brown', className: 'Class C', rollNo: 104 },<br>
+        Student { name: 'Michael Lee', className: 'Class B', rollNo: 105 },<br>
+        Student { name: 'Emily Davis', className: 'Class A', rollNo: 106 }<br>
+        ]
+
+    </h5>
+
+</body>
+
+</html>
